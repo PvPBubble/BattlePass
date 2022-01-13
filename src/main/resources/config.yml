@@ -339,6 +339,16 @@ Messages:
     - ' &6&l* &e/<command> &7progress &f- &7&o"View your Battlepass progress."'
     - ' &6&l* &e/<command> &7rewards &f- &7&o"View available rewards."'
     - '&8&l-------------------------------------------'
+  TIER_SKIPPED_EXECUTOR:
+    - '&cYou allowed %player% to skip a level!'
+  TIER_SKIPPED_PLAYER:
+    - '&cYou automatically skipped a battlepass level!'
+  TIER_NOT_FOUND:
+    - "&cTier with the name %attempt% could not be found!"
+  USER_ALREADY_HIGHER_TIER:
+    - "&cThat user is already a higher or equal tier than tier %attempt%."
+  TIER_SET:
+    - "&cYou set %player%'s tier to %tier%."
 Sounds:
   TIER_RELEASE:
     sound: ENDERDRAGON_GROWL

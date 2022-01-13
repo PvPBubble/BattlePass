@@ -28,6 +28,8 @@ public class PlaceSpawnerChallenge extends Challenge implements Listener
             return;
         }
         final Player player = e.getPlayer();
+        if (!isApplicableToPlayer(player))
+            return;
         if (this.canDo(player) && this.TYPE.getName() == e.getEntityID()) {
             this.addProgress(player);
         }

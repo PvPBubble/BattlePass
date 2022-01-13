@@ -21,6 +21,8 @@ public class FactionCreateChallenge extends Challenge implements Listener
     @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
     public void onFactionCreate(final FactionCreateEvent e) {
         final Player player = e.getFPlayer().getPlayer();
+        if (!isApplicableToPlayer(player))
+            return;
         if (this.canDo(player)) {
             this.addProgress(player);
         }

@@ -24,6 +24,8 @@ public class KillPlayerChallenge extends Challenge implements Listener
             return;
         }
         final Player player = e.getEntity().getKiller();
+        if (!isApplicableToPlayer(player))
+            return;
         if (this.canDo(player)) {
             this.addProgress(player);
         }

@@ -21,6 +21,8 @@ public class OpenSupplyCratesChallenge extends Challenge implements Listener
     @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
     public void onOpen(final SupplyCrateOpenEvent e) {
         final Player player = e.getPlayer();
+        if (!isApplicableToPlayer(player))
+            return;
         if (this.canDo(player)) {
             this.addProgress(player);
         }

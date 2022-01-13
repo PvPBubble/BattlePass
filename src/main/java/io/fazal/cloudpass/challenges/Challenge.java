@@ -53,7 +53,7 @@ public abstract class Challenge
     }
     
     public boolean isDone(final Player player) {
-        return this.getProgress(player) == this.getMax();
+        return this.getProgress(player) >= this.getMax();
     }
     
     public int getProgress(final Player player) {
@@ -65,6 +65,15 @@ public abstract class Challenge
     
     public Map<UUID, Integer> getPlayers() {
         return this.players;
+    }
+
+    public void forceComplete(Player player) {
+        players.put(player.getUniqueId(), getMax());
+        Utils.getInstance().sendMessage(player, "CHALLENGE_COMPLETE", new String[] { "%tier%" }, new String[] { this.getTier().getName() });
+        Utils.getInstance().playSound(player, "CHALLENGE_COMPLETE");
+        final DataPlayer data = DataManager.getInstance().getByPlayer(player);
+        data.setChallengesCompleted(data.getChallengesCompleted() + 1);
+        TierManager.getInstance().updateTier(player, this.getTier());
     }
     
     public void setPlayers(final Map<UUID, Integer> players) {
@@ -98,8 +107,6 @@ public abstract class Challenge
         if (!this.getTier().isReleased()) {
             return false;
         }
-        if (!isApplicableToPlayer(player))
-            return false;
         final DataPlayer data = DataManager.getInstance().getByPlayer(player);
         if (data != null) {
             if (data.isMaxTier()) {
@@ -142,7 +149,7 @@ public abstract class Challenge
         }
     }
 
-    public boolean isApplicableToPlayer(Player player) {
+    protected boolean isApplicableToPlayer(Player player) {
         if (!world.equals("") && !player.getWorld().getName().equalsIgnoreCase(world))
             return false;
         if (!region.equals("") && !Utils.getApplicableRegions(player.getLocation()).contains(region.toUpperCase()))

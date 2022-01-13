@@ -26,6 +26,9 @@ public class KillEnemyPlayerChallenge extends Challenge implements Listener {
 		}
 
 		Player player = e.getEntity().getKiller();
+		if (!isApplicableToPlayer(player))
+			return;
+
 		SuperiorPlayer sPlayer = SuperiorSkyblockAPI.getPlayer(player);
 		SuperiorPlayer deadPlayer = SuperiorSkyblockAPI.getPlayer(e.getEntity());
 

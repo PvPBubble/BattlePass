@@ -31,6 +31,8 @@ public class KillMobChallenge extends Challenge implements Listener
             return;
         }
         final Player player = e.getEntity().getKiller();
+        if (!isApplicableToPlayer(player))
+            return;
         if (!this.canDo(player)) {
             return;
         }

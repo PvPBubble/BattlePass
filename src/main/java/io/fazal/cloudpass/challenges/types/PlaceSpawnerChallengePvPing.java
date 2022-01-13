@@ -27,6 +27,8 @@ public class PlaceSpawnerChallengePvPing extends Challenge implements Listener {
 			return;
 		}
 		final Player player = e.getPlayer();
+		if (!isApplicableToPlayer(player))
+			return;
 		if (this.canDo(player) && e.getSpawner().getType() == this.TYPE) {
 			this.addProgress(player);
 		}

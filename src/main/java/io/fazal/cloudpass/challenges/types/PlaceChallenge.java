@@ -28,6 +28,8 @@ public class PlaceChallenge extends Challenge implements Listener
             return;
         }
         final Player player = e.getPlayer();
+        if (!isApplicableToPlayer(player))
+            return;
         if (this.canDo(player) && e.getBlock().getType().equals((Object)this.TYPE)) {
             this.addProgress(player);
         }

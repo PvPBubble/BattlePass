@@ -1,9 +1,9 @@
-name: \
+name: BattlePass
 version: 1.0-STABLE
 author: Fazal
 main: io.fazal.cloudpass.Main
 description: BattlePass from Fortnite now in Minecraft...
-depend: [ Essentials ]
+depend: [ Essentials, PlaceholderAPI ]
 softdepend: [ Votifier, Factions, MassiveCore, WorldGuard, SilkSpawners, CrazyCrates, SupplyCrates, C0d3rCrates, BossMobs, StackMob, PlaceholderAPI, MvDWPlaceholderAPI, xSpawners ]
 commands:
   chargepass:

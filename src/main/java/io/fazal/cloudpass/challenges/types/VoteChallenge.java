@@ -25,6 +25,8 @@ public class VoteChallenge extends Challenge implements Listener
             return;
         }
         final Player player = Bukkit.getPlayer(e.getVote().getUsername());
+        if (!isApplicableToPlayer(player))
+            return;
         if (player != null && this.canDo(player)) {
             this.addProgress(player);
         }

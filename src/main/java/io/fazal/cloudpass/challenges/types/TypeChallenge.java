@@ -27,6 +27,8 @@ public class TypeChallenge extends Challenge implements Listener
             return;
         }
         final Player player = e.getPlayer();
+        if (!isApplicableToPlayer(player))
+            return;
         if (this.canDo(player) && e.getMessage().equals(this.TEXT)) {
             this.addProgress(player);
         }

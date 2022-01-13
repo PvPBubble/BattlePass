@@ -30,6 +30,8 @@ public class CraftChallenge extends Challenge implements Listener
             return;
         }
         final Player player = (Player)e.getWhoClicked();
+        if (!isApplicableToPlayer(player))
+            return;
         if (this.canDo(player) && e.getCurrentItem().getType().equals((Object)this.TYPE) && e.getCurrentItem().getDurability() == (short)this.DATA) {
             this.addProgress(player);
         }

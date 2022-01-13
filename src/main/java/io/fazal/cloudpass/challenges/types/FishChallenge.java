@@ -29,6 +29,8 @@ public class FishChallenge extends Challenge implements Listener
             return;
         }
         final Player player = e.getPlayer();
+        if (!isApplicableToPlayer(player))
+            return;
         if (this.canDo(player) && ((Item)e.getCaught()).getItemStack().getType() == Material.RAW_FISH && ((Item)e.getCaught()).getItemStack().getDurability() == (short)this.DATA) {
             this.addProgress(player);
         }

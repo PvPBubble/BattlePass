@@ -3,7 +3,7 @@ Database:
 Menus:
   Main:
     Size: 27
-    Title: '&8&lCLOUD PASS - &a&l[MENU]'
+    Title: '&8&lBATTLEPASS - &a&l[MENU]'
     Items:
       Border:
         Material: STAINED_GLASS_PANE
@@ -16,10 +16,10 @@ Menus:
         Slot: 10
         Name: '&e&lCHALLENGES'
         Lore:
-          - '&7&o"View Cloud Pass Challenges"'
+          - '&7&o"View Battle Pass Challenges"'
           - ""
           - '&e[Click to View]'
-          - '&7&o(/cloudpass challenges)'
+          - '&7&o(/battlepass challenges)'
       Progress:
         Material: ENDER_PORTAL_FRAME
         Data: 0
@@ -29,21 +29,21 @@ Menus:
           - '&7&o"View your current progress this season."'
           - ""
           - '&e[Click to View]'
-          - '&7&o(/cloudpass progress)'
+          - '&7&o(/battlepass progress)'
       Rewards:
         Material: ANVIL
         Data: 0
         Slot: 16
-        Name: '&b&lREWARDS'
+        Name: '&e&lREWARDS'
         Lore:
           - '&7&o"Click to view all the rewards'
-          - '&7&othat come along with the Cloud Pass."'
+          - '&7&othat come along with the BattlePass."'
           - ""
           - '&e[Click to View]'
-          - '&7&o(/cloudpass rewards)'
+          - '&7&o(/battlepass rewards)'
   Progress:
     Size: 27
-    Title: '&8&lCLOUD PASS - &c&l[Progress]'
+    Title: '&8&lBATTLEPASS - &c&l[Progress]'
     Settings:
       ScrollSlots:
         - 10
@@ -60,20 +60,20 @@ Menus:
         Name: '&7'
         Lore: []
       PreviousPage:
-        Material: WOOL
-        Data: 14
+        Material: ARROW
+        Data: 0
         Slot: 21
         Name: '&c&l<- Previous Page'
         Lore: []
       Back:
-        Material: CHEST
+        Material: WOOD_DOOR
         Data: 0
         Slot: 22
         Name: '&e&l<- Back'
         Lore: []
       NextPage:
-        Material: WOOL
-        Data: 5
+        Material: ARROW
+        Data: 0
         Slot: 23
         Name: '&a&lNext Page ->'
         Lore: []
@@ -82,27 +82,27 @@ Menus:
         Data: 0
         Name: '&c&lALREADY ON MAX PAGE'
         Lore:
-          - '&c&o"You are already on the maximum page!"'
+          - '&7&o"You are already on the maximum page!"'
       MinPage:
         Material: BARRIER
         Data: 0
         Name: '&c&lALREADY ON MIN PAGE'
         Lore:
-          - '&c&o"You are already on the minimum page!"'
+          - '&7&o"You are already on the minimum page!"'
       Info:
         Material: SKULL_ITEM
         Data: 3
         Slot: 9
         Owner: '%player%'
-        Name: '&a&l%player%''s &7Progress'
+        Name: '&e&l%player%''s &6&lProgress'
         Lore:
           - ""
-          - '&2&l* &aChallenges Completed &f%challenges-completed% / %challenges-total%'
-          - '&2&l* &aTiers Earned &f%tiers-completed% / %tiers-total%'
-          - '&2&l* &aRewards Claimed &f%rewards-claimed% / %tiers-total%'
+          - ' &6» &eChallenges Completed &f%challenges-completed% / %challenges-total%'
+          - ' &6» &eTiers Earned &f%tiers-completed% / %tiers-total%'
+          - ' &6» &eRewards Claimed &f%rewards-claimed% / %tiers-total%'
   Challenges:
     Size: 54
-    Title: '&8&lCLOUD PASS - &e&l[CHALLENGES]'
+    Title: '&8&lBATTLEPASS - &e&l[CHALLENGES]'
     Settings:
       ScrollSlots:
         - 10
@@ -140,20 +140,20 @@ Menus:
         Name: '&7'
         Lore: []
       PreviousPage:
-        Material: WOOL
-        Data: 14
+        Material: ARROW
+        Data: 0
         Slot: 48
         Name: '&c&l<- Previous Page'
         Lore: []
       Back:
-        Material: CHEST
+        Material: WOOD_DOOR
         Data: 0
         Slot: 49
         Name: '&e&l<- Back'
         Lore: []
       NextPage:
-        Material: WOOL
-        Data: 5
+        Material: ARROW
+        Data: 0
         Slot: 50
         Name: '&a&lNext Page ->'
         Lore: []
@@ -162,13 +162,13 @@ Menus:
         Data: 0
         Name: '&c&lALREADY ON MAX PAGE'
         Lore:
-          - '&c&o"You are already on the maximum page!"'
+          - '&7&o"You are already on the maximum page!"'
       MinPage:
         Material: BARRIER
         Data: 0
         Name: '&c&lALREADY ON MIN PAGE'
         Lore:
-          - '&c&o"You are already on the minimum page!"'
+          - '&7&o"You are already on the minimum page!"'
       NotStarted:
         Material: STAINED_GLASS_PANE
         Data: 1
@@ -226,7 +226,7 @@ Menus:
           - '&c&lLOCKED'
   Rewards:
     Size: 54
-    Title: '&8&lCLOUD PASS - &b&l[Rewards]'
+    Title: '&8&lBATTLEPASS - &e&l[Rewards]'
     Settings:
       ScrollSlots:
         - 10
@@ -264,20 +264,20 @@ Menus:
         Name: '&7'
         Lore: []
       PreviousPage:
-        Material: WOOL
-        Data: 14
+        Material: ARROW
+        Data: 0
         Slot: 48
         Name: '&c&l<- Previous Page'
         Lore: []
       Back:
-        Material: CHEST
+        Material: WOOD_DOOR
         Data: 0
         Slot: 49
         Name: '&e&l<- Back'
         Lore: []
       NextPage:
-        Material: WOOL
-        Data: 5
+        Material: ARROW
+        Data: 0
         Slot: 50
         Name: '&a&lNext Page ->'
         Lore: []
@@ -295,50 +295,60 @@ Menus:
           - '&c&o"You are already on the minimum page!"'
 Messages:
   COOLDOWN:
-    - '&c&l[!] &cYou must wait to open the Cloud Pass Interface again!'
+    - '&c&l<!> &cYou must wait to open the BattlePass Pass Interface again!'
   TIER_RELEASE:
-    - '&e&l[!] &eTier &6%tier% &echallenges have now been released!'
+    - '&e&l<!> &eTier &6%tier% &echallenges have now been released!'
   CHALLENGE_COMPLETE:
-    - '&e&l[!] &eYou have successfully completed a challenge from &3Cloud &bPass &7(Tier %tier%)&e!'
+    - '&e&l<!> &eYou have successfully completed a challenge from BattlePass &7(Tier %tier%)&e!'
   TIER_COMPLETE:
-    - '&a&l+1 &3&lCLOUD &b&lPASS &a&lTIER &7(Tier %newtier%)'
-    - '&e&l[!] &eYou have successfully completed &6Tier %tier%&e, &6claim rewards &7(/cloudpass rewards)&e!'
+    - '&a&l+1 &6&lBATTLEPASS &e&lPASS &a&lTIER &7(Tier %newtier%)'
+    - '&e&l<!> &eYou have successfully completed &6Tier %tier%&e, &6claim rewards &7(/battlepass rewards)&e!'
   CHALLENGE_UPDATE:
-    - '&e&l[!] &eYou have completed &6%percentage%&e of your &6%challenge%&7 (Tier %tier%)&e!'
+    - '&e&l<!> &eYou have completed &6%percentage%&e of your &6%challenge%&7 (Tier %tier%)&e!'
   NO_PERMISSION:
-    - '&c&l[!] &cYou do not have permission to execute this command...'
+    - '&c&l<!> &cYou do not have permission to execute this command...'
   CONFIG_RELOAD:
-    - '&e&l[!] &eThe configuration file has been reloaded &7(&6%ms%&7 ms)!'
+    - '&e&l<!> &eThe configuration file has been reloaded &7(&6%ms%&7 ms)!'
   TARGET_OFFLINE:
-    - '&c&l[!] &7"%player%" &cis not locally online...'
+    - '&c&l<!> &7"%player%" &cis not locally online...'
   TARGET_ALREADY_OWNS:
-    - '&c&l[!] &7"%player%" &calready owns the &7Cloud Pass&c...'
+    - '&c&l<!> &7"%player%" &calready owns the &7BattlePass&c...'
   GIVE_PASS:
-    - '&e&l[!] &eYou have given &6%player%&3&l Cloud &b&lPass&e!'
+    - '&e&l<!> &eYou have given &6%player%&6&l Battle&6&lPass&e!'
   GIVEN_PASS:
-    - '&e&l[!] &eYou have been given a &3&lCloud &b&lPass&e!'
+    - '&e&l<!> &eYou have been given a &e&lBattle&6&lPass&e!'
   SAVE_TASK_START:
-    - '&b&lCloud&f&lPass &fStarting save task!'
+    - '&7&o[BattlePass] Starting save task!'
   SAVE_TASK_DONE:
-    - '&b&lCloud&f&lPass &fSave task completed! &7(%ms%ms)'
+    - '&7&o[BattlePass] Starting save task! &7(%ms%ms)'
   ADMIN_HELP:
     - '&8&l-------------------------------------------'
-    - '&7> &3&lCloud &b&lPass &7&lHelp'
-    - ' &3&l* &b/<command> &f- &7&o"Open main cloud pass menu."'
-    - ' &3&l* &b/<command> &7challenges &f- &7&o"View all challenges."'
-    - ' &3&l* &b/<command> &7progress &f- &7&o"View your cloud pass progress."'
-    - ' &3&l* &b/<command> &7rewards &f- &7&o"View available rewards."'
-    - ' &3&l* &b/<command> &7reload &f- &7&o"Reload plugin configurations."'
-    - ' &3&l* &b/<command> &7give &f[player] &f- &7&o"Gives a player cloud pass."'
+    - '&7> &e&lBattle &6&lPass &7&lHelp'
+    - ' &6&l* &e/<command> &f- &7&o"Open main Battlepass menu."'
+    - ' &6&l* &e/<command> &7challenges &f- &7&o"View all challenges."'
+    - ' &6&l* &e/<command> &7progress &f- &7&o"View your Battlepass progress."'
+    - ' &6&l* &e/<command> &7rewards &f- &7&o"View available rewards."'
+    - ' &6&l* &e/<command> &7reload &f- &7&o"Reload plugin configurations."'
+    - ' &6&l* &e/<command> &7give &f[player] &f- &7&o"Gives a player Battlepass."'
     - '&8&l-------------------------------------------'
   HELP:
     - '&8&l-------------------------------------------'
-    - '&7> &3&lCloud &b&lPass &7&lHelp'
-    - ' &3&l* &b/<command> &f- &7&o"Open main cloud pass menu."'
-    - ' &3&l* &b/<command> &7challenges &f- &7&o"View all challenges."'
-    - ' &3&l* &b/<command> &7progress &f- &7&o"View your cloud pass progress."'
-    - ' &3&l* &b/<command> &7rewards &f- &7&o"View available rewards."'
+    - '&7> &e&lBattle &6&lPass &7&lHelp'
+    - ' &6&l* &e/<command> &f- &7&o"Open main Battlepass menu."'
+    - ' &6&l* &e/<command> &7challenges &f- &7&o"View all challenges."'
+    - ' &6&l* &e/<command> &7progress &f- &7&o"View your Battlepass progress."'
+    - ' &6&l* &e/<command> &7rewards &f- &7&o"View available rewards."'
     - '&8&l-------------------------------------------'
+  TIER_SKIPPED_EXECUTOR:
+    - '&cYou allowed %player% to skip a level!'
+  TIER_SKIPPED_PLAYER:
+    - '&cYou automatically skipped a battlepass level!'
+  TIER_NOT_FOUND:
+    - "&cTier with the name %attempt% could not be found!"
+  USER_ALREADY_HIGHER_TIER:
+    - "&cThat user is already a higher or equal tier than tier %attempt%."
+  TIER_SET:
+    - "&cYou set %player%'s tier to %tier%."
 Sounds:
   TIER_RELEASE:
     sound: ENDERDRAGON_GROWL
@@ -381,7 +391,7 @@ Sounds:
     volume: 1
     pitch: 0.4920635
   MENU_OPEN:
-    sound: CHEST_OPEN
+    sound: BAT_TAKEOFF
     enabled: true
     volume: 5
     pitch: 0.4920635
@@ -398,92 +408,84 @@ Sounds:
 Tiers:
   I:
     Free: true
-    ReleaseTime: 'Sat Mar 16 15:00:00 EST 2019'
+    ReleaseTime: 'Sat May 8 15:05:00 EST 2021'
     Challenges:
-      'Create A Faction':
-        Description: 'Create a faction. [/f create]'
-        ChallengeType: FactionCreate
-      'Open a Sky Key':
-        Description: 'Open a Sky Key.'
-        ChallengeType: OpenCrate
-        Crate: Sky
-        Amount: 1
-      'Eat 64x Golden Apples':
-        Description: 'Eat 64x Golden Apples.'
+      'Break 250x Coal Ore':
+        Description: 'Break 250x Coal Ore at /warp MobShaft'
+        ChallengeType: Break
+        Material: COAL_ORE
+        Amount: 250
+      'Eat 16x Golden Apples':
+        Description: 'Eat 16x Golden Apples.'
         ChallengeType: Consume
         Material: GOLDEN_APPLE
         Data: 0
-        Amount: 64
-      'Type CloudPass':
-        Description: 'Type #CloudPass in chat.'
+        Amount: 16
+      'Type BattlePass':
+        Description: 'Type #BattlePass in chat.'
         ChallengeType: Type
-        Text: '#CloudPass'
+        Text: '#BattlePass'
+      'Vote':
+        Description: 'Vote 3 times'
+        ChallengeType: Vote
+        Amount: 3
     Commands:
-      - 'spawner give %player% Blaze 3'
-      - 'spawner give %player% Creeper 3'
-      - 'spawner give %player% IronGolem 1'
-      - 'voucher give 2PowerBoost 1 %player%'
-      - 'eco give %player% 75000'
-      - 'voucher give CloudPassSeason1Tag %player%'
+      - 'spawners give %player% Blaze 1'
+      - 'spawners give %player% Creeper 1'
+      - 'spawners give %player% Iron_Golem 1'
+      - 'eco give %player% 100000'
+      - 'lp user %player% permission set essentials.warps.lapisshaft true server=skyblock'
     Items:
       Progress:
         InProgress:
           Material: STAINED_GLASS_PANE
           Data: 1
-          Name: '&d&lTIER I &7(Free Tier)'
+          Name: '&d&lTIER I'
           Lore:
             - '&7&o"Tier I rewards include..."'
-            - '&e&l* &7x3 Blaze Spawners'
-            - '&e&l* &7x3 Creeper Spawners'
+            - '&e&l* &7x1 Blaze Spawners'
+            - '&e&l* &7x1 Creeper Spawners'
             - '&e&l* &7x1 Iron Golem Spawner'
-            - '&e&l* &7+2 Faction Powerboost'
-            - '&e&l* &7$75,000'
-            - '&e&l* &7Season 1 &bCloud&3Pass &7Tag'
+            - '&e&l* &7$100,000'
+            - '&e&l* &7Lapis Shaft Access'
             - ""
             - '&e&lIN PROGRESS'
             - ""
         Locked:
           Material: IRON_FENCE
           Data: 0
-          Name: '&d&lTIER I &7(Free Tier)'
+          Name: '&d&lTIER I'
           Lore:
             - '&7&o"Tier I rewards include..."'
-            - '&e&l* &7x3 Blaze Spawners'
-            - '&e&l* &7x3 Creeper Spawners'
+            - '&e&l* &7x1 Blaze Spawners'
+            - '&e&l* &7x1 Creeper Spawners'
             - '&e&l* &7x1 Iron Golem Spawner'
-            - '&e&l* &7+2 Faction Powerboost'
-            - '&e&l* &7$75,000'
-            - '&e&l* &7Season 1 &bCloud&3Pass &7Tag'
+            - '&e&l* &7Lapis Shaft Access'
             - ""
             - '&c&lLOCKED'
             - ""
         Unlocked:
           Material: STAINED_GLASS_PANE
           Data: 5
-          Name: '&d&lTIER I &7(Free Tier)'
+          Name: '&d&lTIER I'
           Lore:
             - '&7&o"Tier I rewards include..."'
-            - '&e&l* &7x3 Blaze Spawners'
-            - '&e&l* &7x3 Creeper Spawners'
+            - '&e&l* &7x1 Blaze Spawners'
+            - '&e&l* &7x1 Creeper Spawners'
             - '&e&l* &7x1 Iron Golem Spawner'
-            - '&e&l* &7+2 Faction Powerboost'
-            - '&e&l* &7$75,000'
-            - '&e&l* &7Season 1 &bCloud&3Pass &7Tag'
+            - '&e&l* &7Lapis Shaft Access'
             - ""
             - '&a&lUNLOCKED'
             - ""
         Claim:
           Material: STAINED_GLASS_PANE
           Data: 5
-          Name: '&a&lTIER I &7(Free Tier)'
+          Name: '&a&lTIER I'
           Lore:
-            - '&7&o"Tier I rewards include..."'
-            - '&e&l* &7x3 Blaze Spawners'
-            - '&e&l* &7x3 Creeper Spawners'
+            - '&e&l* &7x1 Blaze Spawners'
+            - '&e&l* &7x1 Creeper Spawners'
             - '&e&l* &7x1 Iron Golem Spawner'
-            - '&e&l* &7+2 Faction Powerboost'
-            - '&e&l* &7$75,000'
-            - '&e&l* &7Season 1 &bCloud&3Pass &7Tag'
+            - '&e&l* &7Lapis Shaft Access'
             - ""
             - '&e[Click to Claim]'
             - ""
@@ -491,74 +493,89 @@ Tiers:
             - ""
   II:
     Free: true
-    ReleaseTime: 'Sat Mar 16 15:00:00 EST 2019'
+    ReleaseTime: 'Sat May 8 15:05:00 EST 2021'
     Challenges:
-      'Break 10000x Logs':
-        Description: 'Break 10,000x logs.'
+      'Break 750x Logs':
+        Description: 'Break 750x logs.'
         ChallengeType: Break
         Material: LOG
-        Amount: 10000
+        Amount: 750
+      'Break 1,500x Leaves':
+        Description: 'Break 1,500x Leaves.'
+        ChallengeType: Break
+        Material: LEAVES
+        Amount: 1500
       'Place A Villager Spawner':
         Description: 'Place an Villager Spawner.'
         ChallengeType: PlaceSpawner
         Mob: VILLAGER
         Amount: 1
+      'Break 250x Lapis Ore':
+        Description: 'Break 250x Lapis Ore at /warp MobShaft'
+        ChallengeType: Break
+        Material: LAPIS_ORE
+        Amount: 250
       'Place A Iron Golem Spawner':
         Description: 'Place an Iron Golem Spawner.'
         ChallengeType: PlaceSpawner
         Mob: IRON_GOLEM
         Amount: 1
     Commands:
-      - 'mobcoins give %player% 250'
-      - 'mp 2 %player% 1'
-      - 'spawner give %player% ZombiePigman 3'
+      - 'mobcoins give %player% 10000'
+      - 'pouches give %player% moneyIv 1'
+      - 'spawners give %player% pig_zombie 3'
+      - 'lp user %player% permission set essentials.warps.redstoneshaft true server=skyblock'
     Items:
       Progress:
         InProgress:
           Material: STAINED_GLASS_PANE
           Data: 1
-          Name: '&d&lTIER II &7(Free Tier)'
+          Name: '&d&lTIER II'
           Lore:
             - '&7&o"Tier II rewards include..."'
-            - '&e&l* &7+250 Mob Coins'
-            - '&e&l* &7Tier 2 Money Pouch'
+            - '&e&l* &7+10,000 Mob Coins'
+            - '&e&l* &7Tier 4 Money Pouch'
             - '&e&l* &7x3 Zombie Pigman Spawner'
+            - '&e&l* &7Redstone Shaft Access'
             - ""
             - '&e&lIN PROGRESS'
             - ""
         Locked:
           Material: IRON_FENCE
           Data: 0
-          Name: '&d&lTIER II &7(Free Tier)'
+          Name: '&d&lTIER II'
           Lore:
             - '&7&o"Tier II rewards include..."'
-            - '&e&l* &7+250 Mob Coins'
-            - '&e&l* &7Tier 2 Money Pouch'
+            - '&e&l* &7+10,000 Mob Coins'
+            - '&e&l* &7Tier 4 Money Pouch'
             - '&e&l* &7x3 Zombie Pigman Spawner'
+            - '&e&l* &7Redstone Shaft Access'
             - ""
             - '&c&lLOCKED'
             - ""
         Unlocked:
           Material: STAINED_GLASS_PANE
           Data: 5
-          Name: '&d&lTIER II &7(Free Tier)'
+          Name: '&d&lTIER II'
           Lore:
             - '&7&o"Tier II rewards include..."'
-            - '&e&l* &7+250 Mob Coins'
-            - '&e&l* &7Tier 2 Money Pouch'
+            - '&e&l* &7+10,000 Mob Coins'
+            - '&e&l* &7Tier 4 Money Pouch'
             - '&e&l* &7x3 Zombie Pigman Spawner'
+            - '&e&l* &7Redstone Shaft Access'
             - ""
             - '&a&lUNLOCKED'
             - ""
         Claim:
           Material: STAINED_GLASS_PANE
           Data: 5
-          Name: '&d&lTIER II &7(Free Tier)'
+          Name: '&d&lTIER II'
           Lore:
             - '&7&o"Tier II rewards include..."'
-            - '&e&l* &7+250 Mob Coins'
-            - '&e&l* &7Tier 2 Money Pouch'
+            - '&e&l* &7+10,000 Mob Coins'
+            - '&e&l* &7Tier 4 Money Pouch'
             - '&e&l* &7x3 Zombie Pigman Spawner'
+            - '&e&l* &7Redstone Shaft Access'
             - ""
             - '&e[Click to Claim]'
             - ""
@@ -566,72 +583,77 @@ Tiers:
             - ""
   III:
     Free: true
-    ReleaseTime: 'Sat Mar 16 15:00:00 EST 2019'
+    ReleaseTime: 'Sat May 8 15:05:00 EST 2021'
     Challenges:
-      'Open 10 Vote Keys':
-        Description: 'Open 10x Vote Key.'
-        ChallengeType: OpenCrate
-        Crate: Vote
-        Amount: 10
-      'Open 3 Supply Crates':
-        Description: 'Claim 3x Supply Crates.'
-        ChallengeType: OpenSupplyCrate
+      'Kill 3 Enemy Players':
+        Description: 'Kill 3x Enemy Players.'
+        ChallengeType: KillPlayer
         Amount: 3
-      'Kill 10 Enemy Players':
-        Description: 'Kill 10x Enemy Players.'
-        ChallengeType: KillEnemyPlayer
-        Amount: 10
+      'Break 250x Redstone Ore':
+        Description: 'Break 250x Redstone Ore at /warp MobShaft'
+        ChallengeType: Break
+        Material: Redstone_ORE
+        Amount: 250
+      'Place A Blaze Spawner':
+        Description: 'Place an Blaze Spawner.'
+        ChallengeType: PlaceSpawner
+        Mob: BLAZE
+        Amount: 1
+      'Kill 500x Blazes':
+        Description: 'Kill 500x Blazes'
+        ChallengeType: KillMob
+        Amount: 500
     Commands:
-      - 'cratesadmin give %player% Thunder 1'
-      - 'cratesadmin give %player% Cloud 2'
-      - 'voucher give 2PowerBoost 1 %player%'
+      - 'crates give %player% Vote 2'
+      - 'crates give %player% Treasure 5'
+      - 'lp user %player% permission set essentials.warps.emeraldshaft true server=skyblock'
     Items:
       Progress:
         InProgress:
           Material: STAINED_GLASS_PANE
           Data: 1
-          Name: '&d&lTIER III &7(Free Tier)'
+          Name: '&d&lTIER III'
           Lore:
             - '&7&o"Tier III rewards include..."'
-            - '&e&l* &7x1 Thunder Key'
-            - '&e&l* &7x2 Cloud Keys'
-            - '&e&l* &7+2 Faction Power Boost'
+            - '&e&l* &7x2 Vote Key'
+            - '&e&l* &7x1 Treasure Keys'
+            - '&e&l* &7Emerald Shaft Access'
             - ""
             - '&e&lIN PROGRESS'
             - ""
         Locked:
           Material: IRON_FENCE
           Data: 0
-          Name: '&d&lTIER III &7(Free Tier)'
+          Name: '&d&lTIER III'
           Lore:
             - '&7&o"Tier III rewards include..."'
-            - '&e&l* &7x1 Thunder Key'
-            - '&e&l* &7x2 Cloud Keys'
-            - '&e&l* &7+2 Faction Power Boost'
+            - '&e&l* &7x2 Vote Key'
+            - '&e&l* &7x1 Treasure Keys'
+            - '&e&l* &7Emerald Shaft Access'
             - ""
             - '&c&lLOCKED'
             - ""
         Unlocked:
           Material: STAINED_GLASS_PANE
           Data: 5
-          Name: '&d&lTIER III &7(Free Tier)'
+          Name: '&d&lTIER III'
           Lore:
             - '&7&o"Tier III rewards include..."'
-            - '&e&l* &7x1 Thunder Key'
-            - '&e&l* &7x2 Cloud Keys'
-            - '&e&l* &7+2 Faction Power Boost'
+            - '&e&l* &7x2 Vote Key'
+            - '&e&l* &7x1 Treasure Keys'
+            - '&e&l* &7Emerald Shaft Access'
             - ""
             - '&a&lUNLOCKED'
             - ""
         Claim:
           Material: STAINED_GLASS_PANE
           Data: 5
-          Name: '&d&lTIER III &7(Free Tier)'
+          Name: '&d&lTIER III'
           Lore:
             - '&7&o"Tier III rewards include..."'
-            - '&e&l* &7x1 Thunder Key'
-            - '&e&l* &7x2 Cloud Keys'
-            - '&e&l* &7+2 Faction Power Boost'
+            - '&e&l* &7x2 Vote Key'
+            - '&e&l* &7x1 Treasure Keys'
+            - '&e&l* &7Emerald Shaft Access'
             - ""
             - '&e[Click to Claim]'
             - ""
@@ -639,68 +661,69 @@ Tiers:
             - ""
   IV:
     Free: true
-    ReleaseTime: 'Sat Mar 16 15:00:00 EST 2019'
+    ReleaseTime: 'Sun May 9 15:05:00 EST 2021'
     Challenges:
-      'Place 2 Villager Spawners':
-        Description: 'Place 2 Villager Spawners.'
+      'Place 10 Villager Spawners':
+        Description: 'Place 10 Villager Spawners.'
         ChallengeType: PlaceSpawner
         Mob: VILLAGER
-        Amount: 2
+        Amount: 10
       'Kill 5 Enemy Players':
         Description: 'Kill 5x Enemy Players.'
-        ChallengeType: KillEnemyPlayer
+        ChallengeType: KillPlayer
         Amount: 5
-      'Mine 50000 Stone':
-        Description: 'Mine 50,000 Stone.'
+      'Break 500x Emerald Ore':
+        Description: 'Mine 500x Emerald Ore at /warp MobShaft'
         ChallengeType: Break
-        Material: STONE
-        Amount: 50000
+        Material: EMERALD_ORE
+        Amount: 500
     Commands:
-      - 'spawner give %player% irongolem 1'
-      - 'voucher give 2PowerBoost 1 %player%'
+      - 'spawner give %player% iron_golem 5'
+      - 'voucher give fixallcommand 1 %player%'
+      - 'lp user %player% permission set essentials.warps.diamondshaft true server=skyblock'
     Items:
       Progress:
         InProgress:
           Material: STAINED_GLASS_PANE
           Data: 1
-          Name: '&d&lTIER IV &7(Free Tier)'
+          Name: '&d&lTIER IV'
           Lore:
             - '&7&o"Tier IV rewards include..."'
-            - '&e&l* &7x1 Iron Golem Spawner'
-            - '&e&l* &7+2 Faction Power Boost'
+            - '&e&l* &7x5 Iron Golem Spawner'
+            - '&e&l* &7Diamond Mine Access'
             - ""
             - '&e&lIN PROGRESS'
             - ""
         Locked:
           Material: IRON_FENCE
           Data: 0
-          Name: '&d&lTIER IV &7(Free Tier)'
+          Name: '&d&lTIER IV'
           Lore:
             - '&7&o"Tier IV rewards include..."'
-            - '&e&l* &7x1 Iron Golem Spawner'
-            - '&e&l* &7+2 Faction Power Boost'
+            - '&e&l* &7x5 Iron Golem Spawner'
+            - '&e&l* &7Diamond Mine Access'
             - ""
             - '&c&lLOCKED'
             - ""
         Unlocked:
           Material: STAINED_GLASS_PANE
           Data: 5
-          Name: '&d&lTIER IV &7(Free Tier)'
+          Name: '&d&lTIER IV'
           Lore:
             - '&7&o"Tier IV rewards include..."'
-            - '&e&l* &7x1 Iron Golem Spawner'
-            - '&e&l* &7+2 Faction Power Boost'
+            - '&e&l* &7x5 Iron Golem Spawner'
+            - '&e&l* &7Diamond Mine Access'
             - ""
             - '&a&lUNLOCKED'
             - ""
         Claim:
           Material: STAINED_GLASS_PANE
           Data: 5
-          Name: '&d&lTIER IV &7(Free Tier)'
+          Name: '&d&lTIER IV'
           Lore:
             - '&7&o"Tier IV rewards include..."'
-            - '&e&l* &7x1 Iron Golem Spawner'
-            - '&e&l* &7+2 Faction Power Boost'
+            - '&e&l* &7x5 Iron Golem Spawner'
+            - '&e&l* &7x1 /fix all command'
             - ""
             - '&e[Click to Claim]'
             - ""
@@ -708,12 +731,17 @@ Tiers:
             - ""
   V:
     Free: true
-    ReleaseTime: 'Sat Mar 16 15:00:00 EST 2019'
+    ReleaseTime: 'Sun May 9 15:05:00 EST 2021'
     Challenges:
-      'Kill 15 Enemy Players':
-        Description: 'Kill 15x Enemy Players.'
-        ChallengeType: KillEnemyPlayer
-        Amount: 15
+      'Kill 8 Enemy Players':
+        Description: 'Kill 8x Enemy Players.'
+        ChallengeType: KillPlayer
+        Amount: 8
+      'Break 750x Diamond Ore':
+        Description: 'Mine 750x Diamond Ore at /warp MobShaft'
+        ChallengeType: Break
+        Material: DIAMOND_ORE
+        Amount: 750
       'Eat 20 Golden Apple':
         Description: 'Eat 20x God Apples.'
         ChallengeType: Consume
@@ -726,61 +754,216 @@ Tiers:
         Material: OBSIDIAN
         Amount: 1000
     Commands:
-      - 'pex user %player% add essentials.enderchest'
-      - 'cratesadmin give %player% Cloud 1'
-      - 'voucher give 2PowerBoost 1 %player%'
-      - 'mobcoins give %player% 400'
+      - 'crates give %player% Unique 1'
+      - 'mobcoins give %player% 5000'
+      - 'lp user %player% permission set essentials.warps.obsidianshaft true server=skyblock'
     Items:
       Progress:
         InProgress:
           Material: STAINED_GLASS_PANE
           Data: 1
-          Name: '&d&lTIER V &7(Free Tier)'
+          Name: '&d&lTIER V'
           Lore:
             - '&7&o"Tier V rewards include..."'
-            - '&e&l* &7/EnderChest Access'
-            - '&e&l* &7x1 Cloud Key'
-            - '&e&l* &7+2 Faction Power Boost'
-            - '&e&l* &7x400 Mob Coins'
+            - '&e&l* &7x1 Unique Key'
+            - '&e&l* &7x5000 Mob Coins'
+            - '&e&l* &7Obsidian Mine Access'
             - ""
             - '&e&lIN PROGRESS'
             - ""
         Locked:
           Material: IRON_FENCE
           Data: 0
-          Name: '&d&lTIER V &7(Free Tier)'
+          Name: '&d&lTIER V'
           Lore:
             - '&7&o"Tier V rewards include..."'
-            - '&e&l* &7/EnderChest Access'
-            - '&e&l* &7x1 Cloud Key'
-            - '&e&l* &7+2 Faction Power Boost'
-            - '&e&l* &7x400 Mob Coins'
+            - '&e&l* &7x1 Unique Key'
+            - '&e&l* &7x5000 Mob Coins'
+            - '&e&l* &7Obsidian Mine Access'
             - ""
             - '&c&lLOCKED'
             - ""
         Unlocked:
           Material: STAINED_GLASS_PANE
           Data: 5
-          Name: '&d&lTIER V &7(Free Tier)'
+          Name: '&d&lTIER V'
           Lore:
             - '&7&o"Tier V rewards include..."'
-            - '&e&l* &7/EnderChest Access'
-            - '&e&l* &7x1 Cloud Key'
-            - '&e&l* &7+2 Faction Power Boost'
-            - '&e&l* &7x400 Mob Coins'
+            - '&e&l* &7x1 Unique Key'
+            - '&e&l* &7x5000 Mob Coins'
+            - '&e&l* &7Obsidian Mine Access'
             - ""
             - '&a&lUNLOCKED'
             - ""
         Claim:
           Material: STAINED_GLASS_PANE
           Data: 5
-          Name: '&d&lTIER V &7(Free Tier)'
+          Name: '&d&lTIER V'
           Lore:
             - '&7&o"Tier V rewards include..."'
-            - '&e&l* &7/EnderChest Access'
-            - '&e&l* &7x1 Cloud Key'
-            - '&e&l* &7+2 Faction Power Boost'
-            - '&e&l* &7x400 Mob Coins'
+            - '&e&l* &7x1 Unique Key'
+            - '&e&l* &7x5000 Mob Coins'
+            - '&e&l* &7Obsidian Mine Access'
+            - ""
+            - '&e[Click to Claim]'
+            - ""
+            - '&a&lUNLOCKED'
+            - ""
+  VI:
+    Free: true
+    ReleaseTime: 'Sun May 9 15:05:00 EST 2021'
+    Challenges:
+      'Vote':
+        Description: 'Vote 3 times'
+        ChallengeType: Vote
+        Amount: 3
+      'Break 500x Obsidian':
+        Description: 'Mine 500x Obsidian at /warp MobShaft'
+        ChallengeType: Break
+        Material: OBSIDIAN
+        Amount: 500
+      'Place 10 Villager Spawners':
+        Description: 'Place 10 Villager Spawners.'
+        ChallengeType: PlaceSpawner
+        Mob: VILLAGER
+        Amount: 10
+      'Open 5 Supply Crates':
+        Description: 'Claim 5x Supply Crates.'
+        ChallengeType: OpenSupplyCrate
+        Amount: 5
+      'Kill 50x Blazes':
+        Description: 'Kill 50x Blazes'
+        ChallengeType: KillMob
+        Amount: 50
+    Commands:
+      - 'crates give %player% Unique 3'
+      - 'crates give %player% Treasure 1'
+      - 'spawners give %player% blaze 5'
+    Items:
+      Progress:
+        InProgress:
+          Material: STAINED_GLASS_PANE
+          Data: 1
+          Name: '&d&lTIER VI'
+          Lore:
+            - '&7&o"Tier VI rewards include..."'
+            - '&e&l* &7x2 Unique Key'
+            - '&e&l* &7x1 Treasure Key'
+            - '&e&l* &7x5 Blazes'
+            - ""
+            - '&e&lIN PROGRESS'
+            - ""
+        Locked:
+          Material: IRON_FENCE
+          Data: 0
+          Name: '&d&lTIER VI'
+          Lore:
+            - '&7&o"Tier VI rewards include..."'
+            - '&e&l* &7x2 Unique Key'
+            - '&e&l* &7x1 Treasure Key'
+            - '&e&l* &7x5 Blazes'
+            - ""
+            - '&c&lLOCKED'
+            - ""
+        Unlocked:
+          Material: STAINED_GLASS_PANE
+          Data: 5
+          Name: '&d&lTIER VI'
+          Lore:
+            - '&7&o"Tier VI rewards include..."'
+            - '&e&l* &7x2 Unique Key'
+            - '&e&l* &7x1 Treasure Key'
+            - '&e&l* &7x5 Blazes'
+            - ""
+            - '&a&lUNLOCKED'
+            - ""
+        Claim:
+          Material: STAINED_GLASS_PANE
+          Data: 5
+          Name: '&d&lTIER VI'
+          Lore:
+            - '&7&o"Tier VI rewards include..."'
+            - '&e&l* &7x2 Unique Key'
+            - '&e&l* &7x1 Treasure Key'
+            - '&e&l* &7x5 Blazes'
+            - ""
+            - '&e[Click to Claim]'
+            - ""
+            - '&a&lUNLOCKED'
+            - ""
+  VII:
+    Free: true
+    ReleaseTime: 'Sun May 9 15:05:00 EST 2021'
+    Challenges:
+      'Craft Golden Apple':
+        Description: 'Craft 6 Golden Apples'
+        ChallengeType: Craft
+        Material: GOLDEN_APPLE
+        Amount: 6
+      'Place 1000 Sugar Cane':
+        Description: 'Break 1000x Sugar Cane'
+        ChallengeType: Break
+        Material: SUGAR_CANE_BLOCK
+        Amount: 1000
+      'Open 10 Supply Crates':
+        Description: 'Claim 10x Supply Crates.'
+        ChallengeType: OpenSupplyCrate
+        Amount: 5
+      'Kill 500x Blazes':
+        Description: 'Kill 500x Blazes'
+        ChallengeType: KillMob
+        Amount: 50
+    Commands:
+      - 'crates give %player% Unique 5'
+      - 'spawners give %player% iron_golem 10'
+      - 'lp user %player% permission set tags.battlepass'
+    Items:
+      Progress:
+        InProgress:
+          Material: STAINED_GLASS_PANE
+          Data: 1
+          Name: '&d&lTIER VII'
+          Lore:
+            - '&7&o"Tier VII rewards include..."'
+            - '&e&l* &7x1 BattlePass Tag (Auto Applied)'
+            - '&e&l* &7x5 Unique Key'
+            - '&e&l* &7x5 Iron Golem Spawners'
+            - ""
+            - '&e&lIN PROGRESS'
+            - ""
+        Locked:
+          Material: IRON_FENCE
+          Data: 0
+          Name: '&d&lTIER VI'
+          Lore:
+            - '&7&o"Tier VII rewards include..."'
+            - '&e&l* &7x1 BattlePass Tag (Auto Applied)'
+            - '&e&l* &7x5 Unique Key'
+            - '&e&l* &7x5 Iron Golem Spawners'
+            - ""
+            - '&c&lLOCKED'
+            - ""
+        Unlocked:
+          Material: STAINED_GLASS_PANE
+          Data: 5
+          Name: '&d&lTIER VII'
+          Lore:
+            - '&7&o"Tier VII rewards include..."'
+            - '&e&l* &7x1 BattlePass Tag (Auto Applied)'
+            - '&e&l* &7x5 Unique Key'
+            - '&e&l* &7x5 Iron Golem Spawners'
+            - ""
+            - '&a&lUNLOCKED'
+            - ""
+        Claim:
+          Material: STAINED_GLASS_PANE
+          Data: 5
+          Name: '&d&lTIER VII'
+          Lore:
+            - '&7&o"Tier VII rewards include..."'
+            - '&e&l* &7x1 BattlePass Tag (Auto Applied)'
+            - '&e&l* &7x5 Unique Key'
+            - '&e&l* &7x5 Iron Golem Spawners'
             - ""
             - '&e[Click to Claim]'
             - ""

@@ -4,21 +4,35 @@
 
 package io.fazal.cloudpass.hooks;
 
-import io.fazal.cloudpass.data.player.DataPlayer;
-import io.fazal.cloudpass.data.player.DataManager;
-import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 import io.fazal.cloudpass.Main;
-import me.clip.placeholderapi.external.EZPlaceholderHook;
+import io.fazal.cloudpass.data.player.DataManager;
+import io.fazal.cloudpass.data.player.DataPlayer;
+import me.clip.placeholderapi.expansion.PlaceholderExpansion;
+import org.bukkit.entity.Player;
 
-public class PAPIHook extends EZPlaceholderHook
+public class PAPIHook extends PlaceholderExpansion
 {
     private static PAPIHook instance;
     
     public PAPIHook() {
-        super((Plugin)Main.getInstance(), "cloudpass");
     }
-    
+
+    public void hook() {
+        register();
+    }
+
+    public String getIdentifier() {
+        return "battlepass";
+    }
+
+    public String getAuthor() {
+        return "Fazal";
+    }
+
+    public String getVersion() {
+        return Main.getInstance().getDescription().getVersion();
+    }
+
     public static PAPIHook getInstance() {
         if (PAPIHook.instance == null) {
             synchronized (PAPIHook.class) {

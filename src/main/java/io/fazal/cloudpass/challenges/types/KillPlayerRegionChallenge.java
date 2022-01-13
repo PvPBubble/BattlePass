@@ -24,6 +24,8 @@ public class KillPlayerRegionChallenge extends Challenge implements Listener
         if (e.getEntity().getKiller() == null)
             return;
         Player player = e.getEntity().getKiller();
+        if (!isApplicableToPlayer(player))
+            return;
         if (this.canDo(player)) {
             this.addProgress(player);
         }

@@ -30,6 +30,8 @@ public class ConsumeChallenge extends Challenge implements Listener
             return;
         }
         final Player player = e.getPlayer();
+        if (!isApplicableToPlayer(player))
+            return;
         if (this.canDo(player) && e.getItem().getType().equals((Object)this.TYPE) && e.getItem().getDurability() == (short)this.DATA) {
             this.addProgress(player);
         }

@@ -4,28 +4,25 @@
 
 package io.fazal.cloudpass.commands;
 
-import io.fazal.cloudpass.data.player.DataPlayer;
-import java.util.Iterator;
-import java.util.List;
-import org.bukkit.ChatColor;
-import org.bukkit.Bukkit;
-import io.fazal.cloudpass.tier.TierManager;
-import io.fazal.cloudpass.Main;
-import io.fazal.cloudpass.tier.Tier;
-import io.fazal.cloudpass.utils.pair.Pair;
-import io.fazal.cloudpass.challenges.ChallengeRegistry;
-import io.fazal.cloudpass.data.player.DataManager;
+import com.bgsoftware.superiorskyblock.i.D;
 import io.fazal.cloudpass.challenges.Challenge;
-import java.util.ArrayList;
-import io.fazal.cloudpass.menu.RewardsMenu;
-import io.fazal.cloudpass.menu.ProgressMenu;
+import io.fazal.cloudpass.data.player.DataManager;
+import io.fazal.cloudpass.data.player.DataPlayer;
 import io.fazal.cloudpass.menu.ChallengesMenu;
 import io.fazal.cloudpass.menu.MainMenu;
+import io.fazal.cloudpass.menu.ProgressMenu;
+import io.fazal.cloudpass.menu.RewardsMenu;
+import io.fazal.cloudpass.tier.Tier;
+import io.fazal.cloudpass.tier.TierManager;
 import io.fazal.cloudpass.utils.Utils;
-import org.bukkit.entity.Player;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+import java.util.Optional;
 
 public class CloudPassCommand implements CommandExecutor
 {
@@ -63,26 +60,6 @@ public class CloudPassCommand implements CommandExecutor
                         new RewardsMenu(player);
                     }
                 }
-                else if (args[0].equalsIgnoreCase("reload")) {
-                    if (sender.hasPermission("cloudpass.command.reload")) {
-                        final long startTime = System.currentTimeMillis();
-                        final List<Challenge> listToRemove = new ArrayList<Challenge>();
-                        DataManager.getInstance().unregister();
-                        for (final Pair<Tier, Challenge> pair : ChallengeRegistry.getInstance().getChallenges()) {
-                            listToRemove.add(pair.getValue());
-                        }
-                        for (final Challenge challenge : listToRemove) {
-                            ChallengeRegistry.getInstance().unregister(challenge);
-                        }
-                        DataManager.getInstance().register();
-                        Main.getInstance().reloadConfig();
-                        TierManager.getInstance().load();
-                        Utils.getInstance().sendMessage(sender, "CONFIG_RELOAD", new String[] { "%ms%" }, new String[] { System.currentTimeMillis() - startTime + "" });
-                    }
-                    else {
-                        Utils.getInstance().sendMessage(sender, "NO_PERMISSION");
-                    }
-                }
                 else {
                     this.sendHelpMessage(sender, label);
                 }
@@ -111,10 +88,57 @@ public class CloudPassCommand implements CommandExecutor
                             Utils.getInstance().sendMessage(sender, "TARGET_OFFLINE", new String[] { "%player%" }, new String[] { args[1] });
                         }
                     }
+                } else if (args[0].equalsIgnoreCase("complete")) {
+                    Player player = Bukkit.getPlayer(args[1]);
+                    if (player == null) {
+                        Utils.getInstance().sendMessage(sender, "TARGET_OFFLINE", new String[]{"%player%"}, new String[] { args[1]});
+                        return true;
+                    }
+                    DataPlayer dataPlayer = DataManager.getInstance().getByPlayer(player);
+                    Tier tier = TierManager.getInstance().getFromIndex(dataPlayer.getTier());
+                    Optional<Challenge> challenge = TierManager.getInstance().getTierChallenges().get(tier).stream().filter(c -> !c.isDone(player)).findFirst();
+                    if (!challenge.isPresent())
+                        return true;
+                    challenge.get().forceComplete(player);
+                    Utils.getInstance().sendMessage(sender, "TIER_SKIPPED_EXECUTOR", new String[]{"%player%"}, new String[] {player.getName()});
+                    Utils.getInstance().sendMessage(player, "TIER_SKIPPED_PLAYER");
                 }
                 else {
                     this.sendHelpMessage(sender, label);
                 }
+            } else if (args.length == 3) {
+                if (!args[0].equalsIgnoreCase("settier")) {
+                    this.sendHelpMessage(sender, label);
+                    return true;
+                }
+                if (!sender.hasPermission("cloudpass.command.settier")) {
+                    Utils.getInstance().sendMessage(sender, "NO_PERMISSION");
+                    return true;
+                }
+                Player player = Bukkit.getPlayer(args[1]);
+                if (player == null) {
+                    Utils.getInstance().sendMessage(sender, "TARGET_OFFLINE", new String[]{"%player%"}, new String[] { args[1]});
+                    return true;
+                }
+                Optional<Tier> optionalTier = TierManager.getInstance().getByName(args[2]);
+                if (!optionalTier.isPresent()) {
+                    Utils.getInstance().sendMessage(sender, "TIER_NOT_FOUND", new String[] {"%attempt%"}, new String[]{args[2]});
+                    return true;
+                }
+                Tier tier = optionalTier.get();
+                DataPlayer dataPlayer = DataManager.getInstance().getByPlayer(player);
+                if (dataPlayer.getTier() >= tier.getIndex()) {
+                    Utils.getInstance().sendMessage(sender, "USER_ALREADY_HIGHER_TIER", new String[] {"%attempt%"}, new String[] {tier.getName()});
+                    return true;
+                }
+                while (dataPlayer.getTier() < tier.getIndex()) {
+                    Tier currentTier = TierManager.getInstance().getFromIndex(dataPlayer.getTier());
+                    TierManager.getInstance().getTierChallenges().get(currentTier).forEach(c -> {
+                        if (!c.isDone(player))
+                            c.forceComplete(player);
+                    });
+                }
+                Utils.getInstance().sendMessage(sender, "TIER_SET", new String[] {"%player%, %attempt%"}, new String[] {player.getName(), tier.getName()});
             }
             else {
                 this.sendHelpMessage(sender, label);

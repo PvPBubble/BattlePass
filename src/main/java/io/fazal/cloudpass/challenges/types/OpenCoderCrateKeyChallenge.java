@@ -27,6 +27,8 @@ public class OpenCoderCrateKeyChallenge extends Challenge implements Listener
             return;
         }
         final Player player = e.getPlayer();
+        if (!isApplicableToPlayer(player))
+            return;
         if (this.canDo(player) && e.getCrate().equals(this.CRATE)) {
             this.addProgress(player);
         }

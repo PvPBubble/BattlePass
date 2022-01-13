@@ -10,7 +10,9 @@ import io.fazal.cloudpass.data.player.DataManager;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.EntityType;
 import org.bukkit.configuration.ConfigurationSection;
-import java.util.Iterator;
+
+import java.util.*;
+
 import io.fazal.cloudpass.challenges.ChallengeRegistry;
 import io.fazal.cloudpass.challenges.types.VoteChallenge;
 import io.fazal.cloudpass.challenges.types.TypeChallenge;
@@ -36,12 +38,8 @@ import org.bukkit.Material;
 import io.fazal.cloudpass.challenges.types.BreakChallenge;
 import io.fazal.cloudpass.utils.Utils;
 import io.fazal.cloudpass.challenges.ChallengeType;
-import java.util.HashMap;
-import java.util.ArrayList;
 import io.fazal.cloudpass.Main;
 import io.fazal.cloudpass.challenges.Challenge;
-import java.util.Map;
-import java.util.List;
 
 public class TierManager
 {
@@ -79,6 +77,10 @@ public class TierManager
     
     public void setTiers(final List<Tier> tiers) {
         this.tiers = tiers;
+    }
+
+    public Optional<Tier> getByName(String name) {
+        return tiers.stream().filter(tier -> tier.getName().equalsIgnoreCase(name)).findAny();
     }
     
     public int getMaxTier() {
@@ -296,14 +298,8 @@ public class TierManager
         if (data.getTier() > this.getTiers().size() || data.getTier() > tier.getIndex()) {
             return;
         }
-        boolean incomplete = false;
-        for (final Challenge challenge : this.tierChallenges.get(tier)) {
-            if (!challenge.isDone(player)) {
-                incomplete = true;
-                break;
-            }
-        }
-        if (!incomplete) {
+        boolean complete = tierChallenges.get(tier).stream().allMatch(c -> c.isDone(player));
+        if (complete) {
             if (data.getTier() + 1 == this.maxTier) {
                 Utils.getInstance().sendMessage((CommandSender)player, "TIER_COMPLETE", new String[] { "%newtier%", "%tier%" }, new String[] { "COMPLETE", tier.getName() });
             }
