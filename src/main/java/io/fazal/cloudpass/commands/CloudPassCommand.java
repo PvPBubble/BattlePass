@@ -95,7 +95,13 @@ public class CloudPassCommand implements CommandExecutor
                         return true;
                     }
                     DataPlayer dataPlayer = DataManager.getInstance().getByPlayer(player);
-                    Tier tier = TierManager.getInstance().getFromIndex(dataPlayer.getTier());
+                    Tier tier;
+                    try {
+                        tier = TierManager.getInstance().getFromIndex(dataPlayer.getTier());
+                    } catch (IndexOutOfBoundsException e) {
+                        Utils.getInstance().sendMessage(sender, "NO_CHALLENGES_TO_COMPLETE", new String[] {"%player%"}, new String[] {player.getName()});
+                        return true;
+                    }
                     Optional<Challenge> challenge = TierManager.getInstance().getTierChallenges().get(tier).stream().filter(c -> !c.isDone(player)).findFirst();
                     if (!challenge.isPresent())
                         return true;
@@ -138,7 +144,7 @@ public class CloudPassCommand implements CommandExecutor
                             c.forceComplete(player);
                     });
                 }
-                Utils.getInstance().sendMessage(sender, "TIER_SET", new String[] {"%player%, %attempt%"}, new String[] {player.getName(), tier.getName()});
+                Utils.getInstance().sendMessage(sender, "TIER_SET", new String[] {"%player%", "%tier%"}, new String[] {player.getName(), tier.getName()});
             }
             else {
                 this.sendHelpMessage(sender, label);
